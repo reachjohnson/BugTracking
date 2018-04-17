@@ -1,4 +1,4 @@
-package com.opt.base.dao;
+ackage com.opt.base.dao;
 
 import com.opt.exception.DAOException;
 
