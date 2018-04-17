@@ -92,7 +92,7 @@
 	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
 
 	<target name="pmd">
-	      <pmd rulesetfiles="category/java/design.xml">
+	      <pmd rulesetfiles="category/java/design.xml" cacheLocation="PMDCache/pmd.cache">
 	          <formatter type="xml" toFile="pmd.xml"/>
 	          <fileset dir="${WebApp.src.dir}">
 	              <include name="**/*.java"/>
