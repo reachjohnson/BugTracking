@@ -119,8 +119,6 @@
             <include name="**/*.java"/>
         </fileset>
 	  </checkstyle>
-	  <style in="checkstyle_report.xml" out="checkstyle_report.html"
-	      style="checkstyle.xsl"/>
 	</target>
 	
 	<target name="CompileWebApp" description="Compile WebApp source ">
