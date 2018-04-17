@@ -3,6 +3,8 @@
     <property name="app.name" value="OnlinePayments"/>
     <property name="WebApp.name" value="OPTWeb"/>
     <property name="Util.name" value="OPTUtil"/>
+	<property name="PMD.name" value="PMD"/>
+	<property name="CheckStyle.name" value="CheckStyle"/>
     <property name="App.dir" value="."/>
     <property name="WebApp.dir" value="${App.dir}/OPTWeb"/>
     <property name="Util.dir" value="${App.dir}/OPTUtil"/>
@@ -79,7 +81,29 @@
         </fileset>
     </path>
 
-    <target name="CompileWebApp" description="Compile WebApp source ">
+	<path id="pmd.classpath">
+	    <pathelement location="${build}"/>
+	    <fileset dir="${PMD.name}">
+	        <include name="*.jar"/>
+	    </fileset>
+	</path>
+
+	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+
+	<target name="pmd">
+	      <pmd rulesetfiles="category/java/design.xml">
+	          <formatter type="xml" toFile="pmd.xml"/>
+	          <fileset dir="${WebApp.src.dir}">
+	              <include name="**/*.java"/>
+	          </fileset>
+	          <fileset dir="${Util.src.dir}">
+	              <include name="**/*.java"/>
+	          </fileset>
+	      </pmd>
+	</target>
+	
+	
+	<target name="CompileWebApp" description="Compile WebApp source ">
         <javac srcdir="${WebApp.src.dir}" destdir="${WebApp.build.dir}" includeantruntime="false">
             <classpath refid="WebApp.compile.classpath"/>
         </javac>
