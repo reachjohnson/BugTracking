@@ -129,7 +129,7 @@
 		<delete file="${WebApp.dir}/web/WEB-INF/lib/${Util.name}.jar"/>
     </target>
 
-    <target name="OPT" depends="CleanAll, GenerateUtilJar, GenerateOPTWebAppWar">
+    <target name="OPT" depends="CleanAll, GenerateUtilJar, GenerateOPTWebAppWar, pmd">
         <!--<copy file="${App.dir}/${WebApp.name}.war" todir="${JBoss.home}/standalone/deployments"/>-->
     </target>
 </project>
