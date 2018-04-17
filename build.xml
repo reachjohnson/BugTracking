@@ -111,7 +111,7 @@
 	  <checkstyle config="/sun_checks.xml"
 	              failureProperty="checkstyle.failure"
 	              failOnViolation="false">
-	    <formatter type="xml" tofile="checkstyle_report.xml"/>
+	    <formatter type="xml" tofile="checkstyle-result.xml"/>
         <fileset dir="${WebApp.src.dir}">
             <include name="**/*.java"/>
         </fileset>
