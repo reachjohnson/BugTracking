@@ -143,6 +143,7 @@
             <classes dir="${WebApp.dir}/build">
                 <include name="*/**"/>
             </classes>
+        	<metainf dir="${WebApp.dir}/web" includes="WEB-INF/context.xml" /> 
         </war>
 		<delete file="${WebApp.dir}/web/WEB-INF/lib/${Util.name}.jar"/>
     </target>
