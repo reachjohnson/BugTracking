@@ -139,6 +139,7 @@
                 <include name="images/**"/>
                 <include name="WEB-INF/**"/>
                 <exclude name="WEB-INF/struts-default.xml"/>
+            	<exclude name="WEB-INF/context.xml"/>
             </fileset>
             <classes dir="${WebApp.dir}/build">
                 <include name="*/**"/>
