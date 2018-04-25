@@ -12,7 +12,7 @@ public class AppConstants
    public static final String PROCESS_FINISHED = "Process Finished";
    public static final String SUCCESS = "SUCCESS";
    public static final String SESSION_DATA = "SessionData";
-   public static final String DB_JNDI = "java:/opt";
+   public static final String DB_JNDI = "jdbc/TestDB";
    public static final String DEFAULT_PASSWORD = "password";
    public static final String APPLICATIONURL = "http://optserver:1234/OPT";
    public static final String JIRAURL = "https://jira.test.com/browse/";
