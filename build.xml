@@ -93,7 +93,9 @@
 
 	<target name="pmd">
 	      <pmd rulesetfiles="category/java/design.xml" cacheLocation="PMDCache/pmd.cache">
-	          <formatter type="xml" toFile="pmd.xml"/>
+	      	<formatter type="xml" toFile="pmd.xml">
+	      	    <param name="encoding" value="UTF-8" />
+	      	</formatter>
 	          <fileset dir="${WebApp.src.dir}">
 	              <include name="**/*.java"/>
 	          </fileset>
@@ -102,6 +104,7 @@
 	          </fileset>
 	      </pmd>
 	</target>
+	<xslt in="pmd.xml" style="wz-pmd-report.xslt" out="report_pmd.html" />
 	
 	<taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties"
 	         classpath="${CheckStyle.name}/checkstyle-8.9-all.jar"/>
